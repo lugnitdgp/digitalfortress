@@ -29,6 +29,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('login/{id}', 'HomeController@sociallogin');
 	Route::get('login/{id}/callback', 'HomeController@socialcallback');
 	Route::get('logout', 'HomeController@logout');
+
+    Route::get('verify/{token}','HomeController@verifyemail');
 	
     Route::post('login', 'HomeController@login');
     Route::post('register', 'HomeController@register');

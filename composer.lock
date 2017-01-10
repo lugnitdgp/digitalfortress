@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f569d27705aefb170aae3147df64195",
-    "content-hash": "4f11d173e26020ca76c82cdd6edc0b08",
+    "hash": "3e6792af87a88c39ee3d3e251e8a4a5c",
+    "content-hash": "1a7401dd2beb29d48bc88f2ad458ad12",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -646,6 +646,51 @@
                 "tokenizer"
             ],
             "time": "2016-12-07 09:37:55"
+        },
+        {
+            "name": "jrean/laravel-user-verification",
+            "version": "v2.2.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jrean/laravel-user-verification.git",
+                "reference": "e109ed366f8f694ee1941121f192f0af570ed0c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jrean/laravel-user-verification/zipball/e109ed366f8f694ee1941121f192f0af570ed0c1",
+                "reference": "e109ed366f8f694ee1941121f192f0af570ed0c1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*|5.2.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jrean\\UserVerification\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jean Ragouin",
+                    "email": "go@askjong.com"
+                }
+            ],
+            "description": "User Email Verification For Laravel 5.*",
+            "keywords": [
+                "email activation",
+                "email verification",
+                "framework",
+                "laravel",
+                "user activation",
+                "user verification"
+            ],
+            "time": "2016-09-10 21:49:40"
         },
         {
             "name": "laravel/framework",
@@ -1758,16 +1803,16 @@
         },
         {
             "name": "serverfireteam/rapyd-laravel",
-            "version": "1.5.20",
+            "version": "1.5.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serverfireteam/rapyd-laravel.git",
-                "reference": "5475abfe9441069218f2d7b0504d11e69860f3ec"
+                "reference": "470352568890cfea8df64c459d35b263cde3196d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serverfireteam/rapyd-laravel/zipball/5475abfe9441069218f2d7b0504d11e69860f3ec",
-                "reference": "5475abfe9441069218f2d7b0504d11e69860f3ec",
+                "url": "https://api.github.com/repos/serverfireteam/rapyd-laravel/zipball/470352568890cfea8df64c459d35b263cde3196d",
+                "reference": "470352568890cfea8df64c459d35b263cde3196d",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1853,7 @@
                 "form",
                 "laravel"
             ],
-            "time": "2016-11-29 09:02:51"
+            "time": "2017-01-07 13:32:29"
         },
         {
             "name": "studio-42/elfinder",

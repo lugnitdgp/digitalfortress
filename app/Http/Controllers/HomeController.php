@@ -10,7 +10,8 @@ use App\users;
 use App\leaderboard;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Hash;
-
+use DateTime;
+use Mail;
 
 
 class HomeController extends Controller
@@ -91,6 +92,22 @@ class HomeController extends Controller
         }
         return redirect('dashboard');
     }
+    public function verifyemail($token)
+    {
+        $profile=users::where('token',$token)->first();
+        if(!empty($profile))
+        {
+             $profile->verified=1;
+             $profile->token='NULL';
+             $profile->save();
+
+             $this->leaderboard_entry($profile);
+             session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
+             $message='You have succesfully verified your email. Break A Leg!';
+             return view('dashboard')->with(['email'=>$profile['email'],'name'=>$profile['username'],'newusertext'=>$message,'tab'=>1]);
+        }
+        return view('dashboard');
+    }
     public function register(Request $requests)
     {
         $rules = array(
@@ -106,18 +123,29 @@ class HomeController extends Controller
         {
             return view('dashboard')->with(['newusertext'=>'error','tab'=>1]);
         }
+     //   return $requests->input('email');
         $newuser = new users;
         $newuser->email = $requests->input('email');
         $newuser->username = $requests->input('username');
         $newuser->password = Hash::make($requests->input('password'));
+        $newuser->verified=0;
+        $timestamp=new DateTime();
+        $timestamp = $timestamp->getTimestamp();
+        $newuser->token=md5($timestamp);
+        Mail::raw('Verify your Email address! Click on the link http://localhost:8000/verify/'.$newuser->token,function($message) use($requests)
+        {
+             $message->from('noreply@gmail.com','Digital Fortress');
+             $message->to($requests->input('email'));
+        });
         
         $newuser->save();
-        $this->leaderboard_entry($newuser);
+        //$this->leaderboard_entry($newuser);
         
-        session()->put(['name'=>$newuser['username'],'email'=>$newuser['email']]);
-        $message = 'BREAK A LEG !!';
+        //session()->put(['name'=>$newuser['username'],'email'=>$newuser['email']]);
+        $message = 'You have succesfully registered for Digital Fortress. Kindly verify your email address!';
         
-        return view('dashboard')->with(['email'=>$newuser['email'],'name'=>$newuser['username'],'newusertext'=>$message,'tab'=>1]);
+        //return view('dashboard')->with(['email'=>$newuser['email'],'name'=>$newuser['username'],'newusertext'=>$message,'tab'=>1]);
+        return view('dashboard')->with(['newusertext'=>$message,'tab'=>1]);
     }
 
     public function sociallogin($id)
@@ -143,6 +171,8 @@ class HomeController extends Controller
             $profile->username  = $user->getName();
             $password           = str_random(8);
             $profile->password  = Hash::make($password);
+            $profile->verified=1;
+            $profile->token='NULL';
             $profile->save();
 
             $this->leaderboard_entry($profile);
