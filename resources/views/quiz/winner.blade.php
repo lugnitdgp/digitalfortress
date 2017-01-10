@@ -4,7 +4,7 @@
     <div class="col-md-8 col-md-offset-2">
         <div class="card text-center">
             <div class="card-header" data-background-color="red">
-                <h3 class="title text-success">Congarts !!</h3>
+                <h3 class="title text-success">Congratulations !!</h3>
             </div>
             <div class="card-content text-center">
                 <h5 >You have completed all the rounds of Digital Fortress !!<br/>Kindly wait for a new round to be added</h5>

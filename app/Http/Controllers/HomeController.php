@@ -111,6 +111,22 @@ class HomeController extends Controller
         }
         return redirect('dashboard');
     }
+    public function resendmail()
+    {
+        if(session()->has('temp_email'))
+        {
+            $mid=session('temp_email');
+            $token=session('temp_token');
+            Mail::raw('Verify your Email address! Click on the link http://localhost:8000/verify/'.$token,function($message) use($mid)
+             {
+             $message->from('noreply@gmail.com','Digital Fortress');
+             $message->to($mid);
+              });
+            $message = 'Verification mail has been resent! Kindly check your inbox';
+            return view('quiz/verifyemail')->with(['newusertext'=>$message]);
+        }
+        return redirect('dashboard');
+    }
     public function register(Request $requests)
     {
         $rules = array(
@@ -143,12 +159,12 @@ class HomeController extends Controller
         
         $newuser->save();
         //$this->leaderboard_entry($newuser);
-        
+        session()->put(['temp_email'=>$newuser['email'],'temp_token'=>$newuser['token']]);
         //session()->put(['name'=>$newuser['username'],'email'=>$newuser['email']]);
         $message = 'You have succesfully registered for Digital Fortress. Kindly verify your email address!';
         
         //return view('dashboard')->with(['email'=>$newuser['email'],'name'=>$newuser['username'],'newusertext'=>$message,'tab'=>1]);
-        return view('dashboard')->with(['newusertext'=>$message,'tab'=>1]);
+        return view('quiz/verifyemail')->with(['newusertext'=>$message]);
     }
 
     public function sociallogin($id)

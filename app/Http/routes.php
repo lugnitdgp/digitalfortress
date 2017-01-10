@@ -31,6 +31,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('logout', 'HomeController@logout');
 
     Route::get('verify/{token}','HomeController@verifyemail');
+    Route::get('resend','HomeController@resendmail');
 	
     Route::post('login', 'HomeController@login');
     Route::post('register', 'HomeController@register');
