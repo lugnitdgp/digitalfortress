@@ -109,9 +109,28 @@
 </div>
 
 <div class="modal fade" id="mymapmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-    <div class="modal-dialog modal-lg" style="width: 80%">
+    <div class="modal-dialog modal-lg" style="width: 80%;margin-top:10px">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="roundqlabel" class="form-group label-floating is-empty" style="margin-top:0px;">
+                            <label class="control-label">Search here!</label>
+                            <input type="text" class="form-control" id="searchbar">
+                            <span class="material-input"></span>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button style="margin-top:0px; margin-bottom:0px;" type="button" id="searchmap" class="btn btn-default btn-primary">Search</button>
+                    </div>
+                    <div id="loader" class="pull-right" style="padding-right:10px">
+                        <img src="{{ URL::asset('assets/img/gps.gif') }}" style="width:41px;height:41px">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-body" style="margin-top:0px;padding-top:0px">
                 <div id="map2" class="map" style="height: 70vh;"></div>
             </div>
         </div>
@@ -162,7 +181,7 @@ function showGoogleMap(e)
       });
     }
     if(locations.length>0)
-    e.fitLatLngBounds(bounds);
+        e.fitLatLngBounds(bounds);
  }
 
 
@@ -184,9 +203,9 @@ $(document).ready(function(){
         $("#mymapmodal").modal({show:true,keyboard:true});
 
     });
-
+    var map2;
     $('#mymapmodal').on('shown.bs.modal', function (e) {
-        map2 = new GMaps({div: '#map2'});
+        map2 = new GMaps({div: '#map2', lat:23.5501761,lng:87.2875451});
         showGoogleMap(map2);
     });
 
@@ -297,6 +316,26 @@ $(document).ready(function(){
             $(this).find(".material-icons").html('keyboard_arrow_up');
 
         }
+    });
+    $("#loader").hide();
+    $("#searchmap").click(function(){
+
+        $("#loader").show();
+        GMaps.geocode({
+          address: $('#searchbar').val(),
+          callback: function(results, status) {
+
+            if (status == 'OK') {
+                  var latlng = results[0].geometry.location;
+                  map2.setCenter(latlng.lat(), latlng.lng());
+            }
+            else
+            {
+                console.log('error');
+            }
+            $("#loader").hide();
+          }
+        });
     });
 });
 </script>

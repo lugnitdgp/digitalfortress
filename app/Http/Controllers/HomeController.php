@@ -88,6 +88,9 @@ class HomeController extends Controller
         $profile = users::where('email',$email)->first();
         if(!empty($profile))
         {
+            if($profile->verified==0)
+                return view('dashboard')->with(['newusertext'=>'You still have not verified your email address!']);
+
             session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
         }
         return redirect('dashboard');
@@ -106,7 +109,7 @@ class HomeController extends Controller
              $message='You have succesfully verified your email. Break A Leg!';
              return view('dashboard')->with(['email'=>$profile['email'],'name'=>$profile['username'],'newusertext'=>$message,'tab'=>1]);
         }
-        return view('dashboard');
+        return redirect('dashboard');
     }
     public function register(Request $requests)
     {
