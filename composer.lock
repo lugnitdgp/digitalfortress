@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f85fbeb9f8dc5b56dda88bc7404b4d78",
-    "content-hash": "0cc60e00136cfe776ee60782a30c3307",
+    "hash": "2f569d27705aefb170aae3147df64195",
+    "content-hash": "4f11d173e26020ca76c82cdd6edc0b08",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -1367,49 +1367,6 @@
             "time": "2016-09-16 12:04:44"
         },
         {
-            "name": "openbuildings/swiftmailer-css-inliner",
-            "version": "0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/OpenBuildings/swiftmailer-css-inliner.git",
-                "reference": "6b3121c67edfdc7f8e74a19114a1a7f3f922233b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/OpenBuildings/swiftmailer-css-inliner/zipball/6b3121c67edfdc7f8e74a19114a1a7f3f922233b",
-                "reference": "6b3121c67edfdc7f8e74a19114a1a7f3f922233b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "swiftmailer/swiftmailer": "^5.1",
-                "tijsverkoyen/css-to-inline-styles": "^1.5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0",
-                "symfony/css-selector": "^2.0.5|^3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Openbuildings\\Swiftmailer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ivan Kerin",
-                    "email": "ikerin@gmail.com",
-                    "role": "Author"
-                }
-            ],
-            "description": "Inline the css of your html emails",
-            "time": "2016-08-28 08:09:19"
-        },
-        {
             "name": "paragonie/random_compat",
             "version": "v1.4.1",
             "source": {
@@ -1730,50 +1687,6 @@
             "time": "2016-03-09 05:03:14"
         },
         {
-            "name": "pulkitjalan/laravel-mail-css-inliner",
-            "version": "0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pulkitjalan/laravel-mail-css-inliner.git",
-                "reference": "525f582e0776250ee86e47af35201be43c0c7637"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pulkitjalan/laravel-mail-css-inliner/zipball/525f582e0776250ee86e47af35201be43c0c7637",
-                "reference": "525f582e0776250ee86e47af35201be43c0c7637",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "openbuildings/swiftmailer-css-inliner": "0.3.*",
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PulkitJalan\\LaravelMailCssInliner\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pulkit Jalan"
-                }
-            ],
-            "description": "Automatically inline CSS for Laravel emails",
-            "homepage": "https://github.com/pulkitjalan/laravel-mail-css-inliner",
-            "keywords": [
-                "css",
-                "laravel",
-                "mailer",
-                "swiftmailer"
-            ],
-            "time": "2016-02-26 14:57:19"
-        },
-        {
             "name": "serverfireteam/panel",
             "version": "1.5.3",
             "source": {
@@ -1899,16 +1812,16 @@
         },
         {
             "name": "studio-42/elfinder",
-            "version": "2.1.19",
+            "version": "2.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Studio-42/elFinder.git",
-                "reference": "8f89bea1611b5bb003490c4c686288f72855d052"
+                "reference": "7ccdfb3e4f2c7cb015a6c2efd7779d4bbca8b7cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/8f89bea1611b5bb003490c4c686288f72855d052",
-                "reference": "8f89bea1611b5bb003490c4c686288f72855d052",
+                "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/7ccdfb3e4f2c7cb015a6c2efd7779d4bbca8b7cd",
+                "reference": "7ccdfb3e4f2c7cb015a6c2efd7779d4bbca8b7cd",
                 "shasum": ""
             },
             "require": {
@@ -1953,7 +1866,7 @@
             ],
             "description": "File manager for web",
             "homepage": "http://elfinder.org",
-            "time": "2016-12-10 01:13:42"
+            "time": "2017-01-11 14:33:46"
         },
         {
             "name": "swiftmailer/swiftmailer",
