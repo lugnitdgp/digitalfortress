@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ URL::asset('assets/css/bootstrap.min.css') }} " rel="stylesheet" />
+
+    
+    <!-- Material Dashboard CSS -->
+    <link href="{{ URL::asset('assets/css/material-dashboard.css') }}" rel="stylesheet" />
+
+    
+    <!-- Fonts And Icons -->
+    <link href="{{ URL::asset('assets/css/font-awesome.min.css') }} " rel="stylesheet" />
+    <link href="{{ URL::asset('assets/css/matico.css') }} " rel='stylesheet' type='text/css'>
     <div class="col-md-8 col-md-offset-2">
         <div class="card text-center">
             <div class="card-header" data-background-color="red">
@@ -17,4 +28,13 @@
             </div>
         </div>
     </div>
+<!-- Core JS Files -->
+    <script src="{{ URL::asset('assets/js/jquery-3.1.0.min.js') }} " type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/js/material.min.js') }}" type="text/javascript"></script>
+
+
+   
+    <!-- Material Dashboard javascript methods -->
+    <script src="{{ URL::asset('assets/js/material-dashboard.js') }}"></script>
 @stop
