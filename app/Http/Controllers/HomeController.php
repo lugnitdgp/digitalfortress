@@ -117,7 +117,8 @@ class HomeController extends Controller
         {
             $mid=session('temp_email');
             $token=session('temp_token');
-              Mail::send('quiz.email',["token"=>$token],function($message) use($mid)
+            $siteurl = env('APP_URL','http://localhost:8000');
+              Mail::send('quiz.email',["token"=>$token,"siteurl"=>$siteurl],function($message) use($mid)
         {
              $message->from('noreply@gmail.com','Digital Fortress');
              $message->to($mid);
@@ -152,7 +153,8 @@ class HomeController extends Controller
         $timestamp=new DateTime();
         $timestamp = $timestamp->getTimestamp();
         $newuser->token=md5($timestamp);
-        Mail::send('quiz.email',["token"=>$newuser->token],function($message) use($requests)
+        $siteurl = env('APP_URL','http://localhost:8000');
+        Mail::send('quiz.email',["token"=>$newuser->token,"siteurl"=>$siteurl],function($message) use($requests)
         {
              $message->from('noreply@gmail.com','Digital Fortress');
              $message->to($requests->input('email'));
