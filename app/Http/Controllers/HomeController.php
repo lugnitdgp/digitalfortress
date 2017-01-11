@@ -97,6 +97,9 @@ class HomeController extends Controller
     }
     public function verifyemail($token)
     {
+        if($token=="reload")
+            return view('quiz/verifyemail');
+
         $profile=users::where('token',$token)->first();
         if(!empty($profile))
         {
@@ -118,12 +121,12 @@ class HomeController extends Controller
             $mid=session('temp_email');
             $token=session('temp_token');
             $siteurl = env('APP_URL','http://localhost:8000');
-              Mail::send('quiz.email',["token"=>$token,"siteurl"=>$siteurl],function($message) use($mid)
-        {
-             $message->from('noreply@gmail.com','Digital Fortress');
-             $message->to($mid);
-             $message->subject("Welcome to Digital Fortress!");
-        });
+            Mail::send('quiz.email',["token"=>$token,"siteurl"=>$siteurl],function($message) use($mid)
+            {
+                 $message->from('noreply@gmail.com','Digital Fortress');
+                 $message->to($mid);
+                 $message->subject("Welcome to Digital Fortress!");
+            });
             $message = 'Verification mail has been resent! Kindly check your inbox';
             return view('quiz/verifyemail')->with(['newusertext'=>$message]);
         }
@@ -169,6 +172,7 @@ class HomeController extends Controller
         
         //return view('dashboard')->with(['email'=>$newuser['email'],'name'=>$newuser['username'],'newusertext'=>$message,'tab'=>1]);
         return view('quiz/verifyemail')->with(['newusertext'=>$message]);
+        //return redirect('verifyemail');
     }
 
     public function sociallogin($id)
