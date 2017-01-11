@@ -117,11 +117,12 @@ class HomeController extends Controller
         {
             $mid=session('temp_email');
             $token=session('temp_token');
-            Mail::raw('Verify your Email address! Click on the link http://localhost:8000/verify/'.$token,function($message) use($mid)
-             {
+              Mail::send('quiz.email',["token"=>$token],function($message) use($requests)
+        {
              $message->from('noreply@gmail.com','Digital Fortress');
-             $message->to($mid);
-              });
+             $message->to($requests->input('email'));
+             $message->subject("Welcome to Digital Fortress!");
+        });
             $message = 'Verification mail has been resent! Kindly check your inbox';
             return view('quiz/verifyemail')->with(['newusertext'=>$message]);
         }
@@ -151,10 +152,11 @@ class HomeController extends Controller
         $timestamp=new DateTime();
         $timestamp = $timestamp->getTimestamp();
         $newuser->token=md5($timestamp);
-        Mail::raw('Verify your Email address! Click on the link http://localhost:8000/verify/'.$newuser->token,function($message) use($requests)
+        Mail::send('quiz.email',["token"=>$newuser->token],function($message) use($requests)
         {
              $message->from('noreply@gmail.com','Digital Fortress');
              $message->to($requests->input('email'));
+             $message->subject("Welcome to Digital Fortress!");
         });
         
         $newuser->save();
