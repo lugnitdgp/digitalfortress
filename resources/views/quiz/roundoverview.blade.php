@@ -318,6 +318,13 @@ $(document).ready(function(){
         }
     });
     $("#loader").hide();
+
+    $('body').on('keypress', '#searchbar', function(args) {
+    if (args.keyCode == 13) {
+        $('#searchmap').click();
+        return false;
+    }
+});
     $("#searchmap").click(function(){
 
         $("#loader").show();
@@ -328,6 +335,7 @@ $(document).ready(function(){
             if (status == 'OK') {
                   var latlng = results[0].geometry.location;
                   map2.setCenter(latlng.lat(), latlng.lng());
+                  map2.setZoom(17);
             }
             else
             {
