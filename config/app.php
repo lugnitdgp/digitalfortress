@@ -153,6 +153,7 @@ return [
         /*
          * Application Service Providers...
          */
+        PulkitJalan\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,

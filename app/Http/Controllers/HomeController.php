@@ -89,7 +89,7 @@ class HomeController extends Controller
         if(!empty($profile))
         {
             if($profile->verified==0)
-                return view('dashboard')->with(['newusertext'=>'You still have not verified your email address!']);
+                return view('quiz/verifyemail')->with(['newusertext'=>'You still have not verified your email address!']);
 
             session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
         }
@@ -117,10 +117,10 @@ class HomeController extends Controller
         {
             $mid=session('temp_email');
             $token=session('temp_token');
-              Mail::send('quiz.email',["token"=>$token],function($message) use($requests)
+              Mail::send('quiz.email',["token"=>$token],function($message) use($mid)
         {
              $message->from('noreply@gmail.com','Digital Fortress');
-             $message->to($requests->input('email'));
+             $message->to($mid);
              $message->subject("Welcome to Digital Fortress!");
         });
             $message = 'Verification mail has been resent! Kindly check your inbox';

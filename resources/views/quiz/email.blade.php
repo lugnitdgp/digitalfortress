@@ -8,7 +8,7 @@
             </div>
             <div class="card-content text-center">
                 <h5 >Verify your email to play!<br/>Kindly click on the button below to verify!</h5>
-                <h6>Click <a href="https:://localhost:8000/verify/{{$token}}">here</a> to verify!</h6>
+                <h6>Click <a href="http://localhost:8000/verify/{{$token}}">here</a> to verify!</h6>
             </div>
             <div class="card-footer">
                 <div class="stats text-center">
@@ -17,5 +17,4 @@
             </div>
         </div>
     </div>
-
 @stop
