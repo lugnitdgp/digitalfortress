@@ -143,9 +143,13 @@ class HomeController extends Controller
         $this->validate($requests, $rules);
         
         $profile = users::where('email',$requests->input('email'))->first();
+
         if(!empty($profile))
         {
-            return view('dashboard')->with(['newusertext'=>'error','tab'=>1]);
+            if($profile->verified==1)
+                return view('dashboard')->with(['newusertext'=>'error','tab'=>1]);
+            else
+                return view('dashboard')->with(['newusertext'=>'error2','tab'=>1]);
         }
      //   return $requests->input('email');
         $newuser = new users;

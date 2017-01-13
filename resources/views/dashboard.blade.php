@@ -92,15 +92,20 @@
 
 @section('myjs')
 	@if (isset($newusertext)) 
-		@if ($newusertext!="error")
+		@if ($newusertext!="error" && $newusertext!="error2")
 		<script src="{{ URL::asset('assets/js/sweetalert.min.js') }}"></script>
 		<script type="text/javascript">
 			swal({ title:'Thanks for registering !!',text:'{{ $newusertext }}', type:'info'}, function() { document.location.href = '/dashboard' });
 		</script>
-		@else
+		@elseif($newusertext=="error")
 		<script src="{{ URL::asset('assets/js/sweetalert.min.js') }}"></script>
 		<script type="text/javascript">
 			swal({ title:'Email Taken !!',text:'Sorry !! The email id already exists. Try with a different one', type:'error'}, function() { document.location.href = '/dashboard' });
+		</script>
+		@else
+		<script src="{{ URL::asset('assets/js/sweetalert.min.js') }}"></script>
+		<script type="text/javascript">
+			swal({ title:'Email not verified',text:'This email has already been registered, but not verified yet. Kindly check your inbox.', type:'error'}, function() { document.location.href = '/dashboard' });
 		</script>
 		@endif
 	@endif
