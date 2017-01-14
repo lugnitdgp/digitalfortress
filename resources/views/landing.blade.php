@@ -8,7 +8,8 @@
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ URL::asset('assets/css/bootstrap.min.css') }} " rel="stylesheet" />
         <link href="{{ URL::asset('assets/css/landing-page.css') }}" rel="stylesheet"/>
 
         <!--     Fonts and icons     -->
@@ -19,9 +20,9 @@
         <link href="{{ URL::asset('assets/css/material-dashboard.css') }}" rel="stylesheet" />
     </head>
     <body class="landing-page landing-page1">
-        <nav class="navbar navbar-transparent navbar-top" role="navigation">
+        <!-- <nav class="navbar navbar-transparent navbar-top" role="navigation">
             <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
+                Brand and toggle get grouped for better mobile display
                 <div class="navbar-header">
                     <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
                     <span class="sr-only">Toggle navigation</span>
@@ -40,7 +41,7 @@
                         </div>
                     </a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
+                Collect the nav links, forms, and other content for toggling
                 <div class="collapse navbar-collapse" id="example" >
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -63,33 +64,21 @@
                         </li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
+                /.navbar-collapse
             </div>
-        </nav>
+        </nav> -->
         <div class="wrapper">
-            <div class="parallax filter-gradient gray" data-color="blue">
+            <div class="parallax filter-gradient" data-color="blue">
                 <div class="parallax-background">
                     <img class="parallax-background-image" src="{{ URL::asset('assets/img/Hogwartscastle.jpg') }}">
-                </div>
-                <div class= "container">
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="parallax description">
-                                <h1 class="mainfont2">DIGITAL FORTRESS</h1>
-                                <br><br><br><br>
-                                <h4 class="mainfont2sm" align="right">get ready to be puzzled !!</h4>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="section section-gray section-clients">
                 <div class="container text-center">
                     <h4 class="mainfont2sm">Welcome to the Digital Fortress</h4>
-                    <p>
-                        Unwind through the mysteries of the past to know about the future and tackle your present.
-                        And this is all bullshit because the author is in shortage of proper description. :p<br>
-                    </p>
+                    <p>The fortress has several floors each one having different rooms.</p>
+                    <p>There are clues for you which lead you to the staircase for the next floor.</p>
+                    <p>Explore the Sherlock in you and analyse the breathtaking world through maps to find your clues.</p>
                 </div>
             </div>
             <div class="section section-presentation">
@@ -97,21 +86,18 @@
                     <div class="row">
                         <div class="col-md-7">
                             <div class="description" >
-                                <h4 class="mainfont2md" style="color:chocolate;">Lots of Prizes to be Won</h4>
-                                
-                                <h3>Winner gets &#8377; 5000</h3>
-                                <h3>Runner up gets &#8377; 1500</h3>
+                                <h4 class="mainfont2" style="color:chocolate;">Cool Prizes to be Won</h4>
                             </div>
                         </div>
                         <div class="col-md-5 hidden-xs">
-                            <img src="{{ URL::asset('assets/img/prize.png') }}" />
+                            <img src="{{ URL::asset('assets/img/treasure.png') }}" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="parallax filter-gradient orange" data-color="blue">
+            <div class="parallax filter-gradient gray" data-color="blue">
                 <div class="parallax-background">
-                    <img class="parallax-background-image" src="{{ URL::asset('assets/img/Hogwartscastle.jpg') }}">
+                    <img class="parallax-background-image" src="{{ URL::asset('assets/img/mountainfortress.jpg') }}">
                 </div>
                 <div class= "container">
                     <div class="row">
@@ -132,30 +118,25 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="http://mkti.in">
                                 Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                Blog
                                 </a>
                             </li>
                         </ul>
                     </nav>
                     <div class="social-area pull-right">
-                        <a class="btn btn-social btn-facebook btn-simple">
+                        <a class="btn btn-social btn-facebook btn-simple" href="https://www.facebook.com/nitdgplug">
                         <i class="fa fa-facebook-square"></i>
                         </a>
-                        <a class="btn btn-social btn-twitter btn-simple">
+                        <a class="btn btn-social btn-twitter btn-simple" href="https://twitter.com/mukti_nitd">
                         <i class="fa fa-twitter"></i>
                         </a>
-                        <a class="btn btn-social btn-pinterest btn-simple">
-                        <i class="fa fa-pinterest"></i>
+                        <a class="btn btn-social btn-pinterest btn-simple" href="https://www.youtube.com/channel/UCYZPnN5vP5B1sINLLkI1aDA">
+                        <i class="fa fa-youtube"></i>
                         </a>
                     </div>
                     <div class="copyright">
-                        &copy; 2017 <a href="http://abc.xyz">GNU Linux Users' Group</a>
+                        &copy; 2017 <a href="http://nitdgplug.org">GNU Linux Users' Group</a>
                     </div>
                 </div>
             </footer>
