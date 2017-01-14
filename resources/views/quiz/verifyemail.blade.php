@@ -10,7 +10,7 @@
     @section('myjs')
         <script src="{{ URL::asset('assets/js/sweetalert.min.js') }}"></script>
         <script type="text/javascript">
-         swal({ title:'Thanks for registering !!',text:'{{ $newusertext }}', type:'info'},function(){ document.location.href='/verify/reload'; });
+         swal({ title:'{{ $newusertitle }}',text:'{{ $newusermessage }}', type:'{{ $newusertext }}'},function(){ document.location.href='/verify/reload'; });
         </script>
     @endsection
 

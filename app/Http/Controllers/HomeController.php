@@ -85,20 +85,24 @@ class HomeController extends Controller
     {
         $email = $requests->input('email');
         $password = $requests->input('password');
+        //$hashpassword=Hash::make($password);
         $profile = users::where('email',$email)->first();
-        if(!empty($profile))
+        if(!empty($profile) && Hash::check($password,$profile->password))
         {
             if($profile->verified==0)
-                return view('quiz/verifyemail')->with(['newusertext'=>'You still have not verified your email address!']);
+                return view('quiz/verifyemail')->with(['newusertext'=>'error','newusertitle'=>'Already Registered','newusermessage'=>'You still have not verified your email address!']);
 
             session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
         }
-        return redirect('dashboard');
+        return view('dashboard')->with(['newusertext'=>'error','newusertitle'=>'Invalid Credentials','newusermessage'=>'Wrong Username or Password!']);
     }
     public function verifyemail($token)
     {
-        if($token=="reload")
+
+        if($token=="reload" && session()->has('temp_email'))
             return view('quiz/verifyemail');
+        else if($token=="reload")
+            return redirect('dashboard');
 
         $profile=users::where('token',$token)->first();
         if(!empty($profile))
@@ -110,7 +114,7 @@ class HomeController extends Controller
              $this->leaderboard_entry($profile);
              session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
              $message='You have succesfully verified your email. Break A Leg!';
-             return view('dashboard')->with(['email'=>$profile['email'],'name'=>$profile['username'],'newusertext'=>$message,'tab'=>1]);
+             return view('dashboard')->with(['email'=>$profile['email'],'name'=>$profile['username'],'newusertitle'=>'Thanks for Registering!!','newusertext'=>'success','newusermessage'=>$message,'tab'=>1]);
         }
         return redirect('dashboard');
     }
@@ -128,7 +132,7 @@ class HomeController extends Controller
                  $message->subject("Welcome to Digital Fortress!");
             });
             $message = 'Verification mail has been resent! Kindly check your inbox';
-            return view('quiz/verifyemail')->with(['newusertext'=>$message]);
+            return view('quiz/verifyemail')->with(['newusertext'=>'success','newusertitle'=>'Email Resent','newusermessage'=>$message]);
         }
         return redirect('dashboard');
     }
@@ -147,9 +151,9 @@ class HomeController extends Controller
         if(!empty($profile))
         {
             if($profile->verified==1)
-                return view('dashboard')->with(['newusertext'=>'error','tab'=>1]);
+                return view('dashboard')->with(['newusertext'=>'error','newusertitle'=>'Email Taken','newusermessage'=>'This email has already been registered and verified,','tab'=>1]);
             else
-                return view('dashboard')->with(['newusertext'=>'error2','tab'=>1]);
+                return view('dashboard')->with(['newusertext'=>'info','newusertitle'=>'Already Registered','newusermessage'=>'You have registered but not verified your email address! Kindly Check your Inbox','tab'=>1]);
         }
      //   return $requests->input('email');
         $newuser = new users;
@@ -175,7 +179,7 @@ class HomeController extends Controller
         $message = 'You have succesfully registered for Digital Fortress. Kindly verify your email address!';
         
         //return view('dashboard')->with(['email'=>$newuser['email'],'name'=>$newuser['username'],'newusertext'=>$message,'tab'=>1]);
-        return view('quiz/verifyemail')->with(['newusertext'=>$message]);
+        return view('quiz/verifyemail')->with(['newusertext'=>'success','newusertitle'=>'Congratulations!','newusermessage'=>$message]);
         //return redirect('verifyemail');
     }
 
@@ -213,7 +217,7 @@ class HomeController extends Controller
 
         if($flag==1){
             $message = "Your password is ".$password.'.\n\nUse this to login directly.\n\nBREAK A LEG !!';
-            return view('dashboard')->with(['email'=>$email,'name'=>$profile['username'],'newusertext'=>$message,'tab'=>1]);
+            return view('dashboard')->with(['email'=>$email,'name'=>$profile['username'],'newusermessage'=>$message,'newusertext'=>'success','newusertitle'=>'Congratulations!','tab'=>1]);
         }
 
         return redirect('dashboard');
