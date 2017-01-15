@@ -233,7 +233,7 @@ class HomeController extends Controller
     public function myprofile()
     {
         $username = users::where('email',session('email'))->select('username')->get()->first()['username'];
-        return view('quiz/myprofile')->with(['dashname'=>'My Profile','name'=>$username,'email'=>session('email')]);
+        return view('quiz/myprofile')->with(['tab'=>5,'dashname'=>'My Profile','name'=>$username,'email'=>session('email')]);
     }
 
     public function updatepassword(Request $requests)

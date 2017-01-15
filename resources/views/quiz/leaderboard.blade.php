@@ -6,7 +6,7 @@
             <div class="card-header" data-background-color="red">
                 <h4 class="title text-center">Leaderboard</h4>
             </div>
-            <div class="card-content">   
+            <div class="card-content table-responsive">   
                     <div class="form-group" style="margin: 2px">
                         <div class="col-md-3 col-md-offset-9">
                             <select class  ="form-control" name="state" id="maxRows">

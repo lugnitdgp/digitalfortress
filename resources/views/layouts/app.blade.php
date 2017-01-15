@@ -92,7 +92,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             @if (session()->has('name'))
-                                <li class="dropdown">
+                                <li class="dropdown" id="avoidbackdrop">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <i class="material-icons"  style="font-size: 28px;">person</i>
                                         <p class="hidden-lg hidden-md">My Profile</p>

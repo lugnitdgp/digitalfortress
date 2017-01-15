@@ -40,6 +40,10 @@
     height: 100%;
 }
 
+#avoidbackdrop > .dropdown-backdrop {
+    display:none;
+}
+
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;

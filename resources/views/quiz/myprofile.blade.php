@@ -4,8 +4,7 @@
 <div class="col-md-6">
     <div class="card">
         <div class="card-header" data-background-color="purple">
-            <h4 class="title">My Profile</h4>
-			<p class="category">Complete your profile</p>
+            <h4 class="title">Profile Details</h4>
         </div>
         <div class="card-content">
             <div class="row">
