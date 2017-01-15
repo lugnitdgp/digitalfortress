@@ -94,11 +94,12 @@
                             @if (session()->has('name'))
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                       <i class="material-icons"  style="font-size: 28px;">person</i>
+                                        <i class="material-icons"  style="font-size: 28px;">person</i>
+                                        <p class="hidden-lg hidden-md">My Profile</p>
                                    </a>
                                 
                                     <ul class="dropdown-menu">
-                                        <li><a href="/myprofile">My Profile</a></li>
+                                        <li class="{{ (isset($tab)&&$tab==5)?'active':''}}"><a href="/myprofile">My Profile</a></li>
                                         <li><a href="/logout">Logout</a></li>
                                      </ul>
                                 </li>
