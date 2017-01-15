@@ -99,8 +99,8 @@
                                    </a>
                                 
                                     <ul class="dropdown-menu">
-                                        <li class="{{ (isset($tab)&&$tab==5)?'active':''}}"><a href="/myprofile">My Profile</a></li>
-                                        <li><a href="/logout">Logout</a></li>
+                                        <li style="z-index: 1000;" class="{{ (isset($tab)&&$tab==5)?'active':''}}"><a href="/myprofile">My Profile</a></li>
+                                        <li style="z-index: 1000;" ><a href="/logout">Logout</a></li>
                                      </ul>
                                 </li>
                             @endif
