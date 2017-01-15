@@ -93,6 +93,7 @@ class HomeController extends Controller
                 return view('quiz/verifyemail')->with(['newusertext'=>'error','newusertitle'=>'Already Registered','newusermessage'=>'You still have not verified your email address!']);
 
             session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
+            return redirect('dashboard');
         }
         return view('dashboard')->with(['newusertext'=>'error','newusertitle'=>'Invalid Credentials','newusermessage'=>'Wrong Username or Password!']);
     }
