@@ -59,7 +59,6 @@
 	                <thead class="text-danger">
 	                    <th style="font-weight: bold;">Rank</th>
 	                	<th style="font-weight: bold;">Name</th>
-	                	<th style="font-weight: bold;">Email</th>
 	                	<th style="font-weight: bold;">Round</th>
 	                </thead>
 	                <tbody>
@@ -71,7 +70,6 @@
 	                		@endif
 	                			<td>{{ $key+1 }}</td>
 	                			<td>{{ $value['username'] }}</td>
-	                			<td>{{ $value['email'] }}</td>
 	                			<td>{{ $value['round_id'] }}</td>
 	                		</tr>
 	                	@endforeach

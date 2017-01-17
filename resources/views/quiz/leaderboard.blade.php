@@ -22,7 +22,6 @@
                     <table class="table" id="myTable">
                         <thead class="text-primary">
                                 <th>Rank</th>
-                                <th>Email</th>
                                 <th>User Name</th>
                                 <th>Current Round</th>
                                 <th>Solved At</th>
@@ -36,7 +35,6 @@
                             @endif
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $value['username'] }}</td>
-                                    <td>{{ $value['email'] }}</td>
                                     <td>{{ $value['round_id'] }}</td>
                                     <td>{{ $value['updated_at'] }}</td>
                                 </tr>
