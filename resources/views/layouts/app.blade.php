@@ -49,6 +49,12 @@
                                 <p>Round Overview</p>
                             </a>
                         </li>
+                        <li class="{{ (isset($tab)&&$tab==2)?'active':''}}">
+                            <a href="hints">
+                                <i class="material-icons">help_outline</i>
+                                <p>Hints and Updates</p>
+                            </a>
+                        </li>
                     @else
                         <li class="{{ (isset($tab)&&$tab==1)?'active':''}}">
                             <a href="dashboard">
@@ -110,8 +116,8 @@
             </nav>
 
             <div class="content" style="background-image: url('{{ URL::asset('assets/img/back.jpg')}}'); background-repeat: repeat-x;">
-                <div class="container-fluid" style="z-index:-100;">
-                    <div class="row">
+                <div class="container-fluid" style="z-index:-100;" >
+                    <div class="row" >
                         @yield('content')
                     </div>
                 </div>

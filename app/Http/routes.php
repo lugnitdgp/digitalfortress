@@ -25,6 +25,7 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/','HomeController@landing');
+    Route::get('/hints','HomeController@hintview');
     Route::get('dashboard','HomeController@dashboard');
 
     Route::get('login/{id}', 'HomeController@sociallogin');

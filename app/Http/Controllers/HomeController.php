@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Socialite;
 use App\users;
 use App\leaderboard;
+use App\hints;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Hash;
 use DateTime;
@@ -38,6 +39,15 @@ class HomeController extends Controller
         else{
             return 1;
         }
+    }
+    
+    public function hintview()
+    {
+        $hints=hints::all()->sortByDesc('id')->toArray();
+        $no=count($hints);
+        if($no==0)
+            return view('hints')->with(['nohints'=>1]);
+        return view('hints')->with(['hints'=>$hints]);
     }
 
     public function landing(){
