@@ -49,7 +49,7 @@
                                 <p>Round Overview</p>
                             </a>
                         </li>
-                        <li class="{{ (isset($tab)&&$tab==2)?'active':''}}">
+                        <li class="{{ (isset($tab)&&$tab==6)?'active':''}}">
                             <a href="hints">
                                 <i class="material-icons">help_outline</i>
                                 <p>Hints and Updates</p>

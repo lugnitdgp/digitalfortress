@@ -2,11 +2,11 @@
 
 @section('content')
    <div class="col-md-10 col-md-offset-1">
-        <div class="card">
+        <div class="card" >
             <div class="card-header" data-background-color="red">
                 <h4 class="title text-center">Leaderboard</h4>
             </div>
-            <div class="card-content table-responsive">   
+            <div class="card-content table-responsive" style="overflow-y:scroll; height: 500px;">   
                     <div class="form-group" style="margin: 2px">
                         <div class="col-md-3 col-md-offset-9">
                             <select class  ="form-control" name="state" id="maxRows">
@@ -19,7 +19,7 @@
                             </select>
                         </div>
                     </div>
-                    <table class="table" id="myTable">
+                    <table class="table table-responsive table-bordered" id="myTable">
                         <thead class="text-primary">
                                 <th>Rank</th>
                                 <th>User Name</th>

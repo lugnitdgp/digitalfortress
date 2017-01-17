@@ -47,7 +47,7 @@ class HomeController extends Controller
         $no=count($hints);
         if($no==0)
             return view('hints')->with(['nohints'=>1]);
-        return view('hints')->with(['hints'=>$hints]);
+        return view('hints')->with(['tab'=>6,'hints'=>$hints]);
     }
 
     public function landing(){
