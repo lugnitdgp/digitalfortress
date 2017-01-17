@@ -95,7 +95,6 @@ class HomeController extends Controller
     {
         $email = $requests->input('email');
         $password = $requests->input('password');
-        //$hashpassword=Hash::make($password);
         $profile = users::where('email',$email)->first();
         if(!empty($profile) && Hash::check($password,$profile->password))
         {
@@ -123,9 +122,9 @@ class HomeController extends Controller
              $profile->save();
 
              $this->leaderboard_entry($profile);
-             session()->put(['name'=>$profile['username'],'email'=>$profile['email']]);
-             $message='You have succesfully verified your email. Break A Leg!';
-             return view('dashboard')->with(['email'=>$profile['email'],'name'=>$profile['username'],'newusertitle'=>'Thanks for Registering!!','newusertext'=>'success','newusermessage'=>$message,'tab'=>1]);
+             session()->flush();
+             $message='You have succesfully verified your email. Please Login Now. Break A Leg!';
+             return view('dashboard')->with(['newusertitle'=>'Thanks for Registering!!','newusertext'=>'success','newusermessage'=>$message,'tab'=>1]);
         }
         return redirect('dashboard');
     }
