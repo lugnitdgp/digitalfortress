@@ -59,7 +59,7 @@
                         </div>
                         <br>
                         <div class="text-center">
-                        <p>New User !! <a id="registerform" href="javascript: showregisterform();">Register Here</a></p>
+                        <p>New User !! <a class="text-info" id="registerform" href="javascript: showregisterform();">Register Here</a></p>
                         </div>
                     </form>
                 </div>
@@ -99,7 +99,7 @@
                         </div>
                         <br>
                         <div class="text-center">
-                            <p>Already a Member ?? <a id="loginform" href="javascript: showloginform(); ">Login Here</a></p>
+                            <p>Already a Member ?? <a class="text-success" id="loginform" href="javascript: showloginform(); ">Login Here</a></p>
                         </div>
                     </form>
                 </div>
