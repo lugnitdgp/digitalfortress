@@ -3,8 +3,8 @@
 @section('content')
 <div class="col-md-6">
     <div class="card">
-        <div class="card-header" data-background-color="purple">
-            <h4 class="title">Profile Details</h4>
+        <div class="card-header" data-background-color="red">
+            <h4 class="title"><strong>Profile Details</strong></h4>
         </div>
         <div class="card-content">
             <div class="row">
@@ -29,9 +29,8 @@
 </div>
 <div class="col-md-6">
     <div class="card">
-        <div class="card-header" data-background-color="purple">
-            <h4 class="title">Update Password</h4>
-			<p class="category">Change your old password</p>
+        <div class="card-header" data-background-color="red">
+            <h4 class="title"><strong>Update Password</strong></h4>
         </div>
         <div class="card-content">
             <div class="row">
@@ -53,7 +52,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-					<button id="updatepassword" class="btn btn-default btn-primary">Update Password</button>
+					<button id="updatepassword" class="btn btn-default btn-danger">Update Password</button>
                 </div>
             </div>
         </div>

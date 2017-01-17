@@ -109,7 +109,7 @@
 </div>
 
 <div class="modal fade" id="mymapmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-    <div class="modal-dialog modal-lg" style="width: 80%;margin-top:10px">
+    <div class="modal-dialog modal-lg" style="width: 95%;margin-top:10px">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="row">

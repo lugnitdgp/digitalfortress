@@ -12,7 +12,7 @@
 				</div>
 				<div class="card-footer">
 					<div class="stats text-center">
-						<i class="material-icons">games</i><a href="/round_overview">  Go to the Round {{ $stats[$key]['round_id'] }}</a>
+						<i class="text-danger material-icons">games</i>&nbsp;&nbsp;<a class="text-danger" href="/round_overview"><strong>Go to the Round {{ $stats[$key]['round_id'] }}</strong></a>
 					</div>
 				</div>
 			</div>
@@ -24,7 +24,7 @@
 						<div style="padding: 10px;">{{ $people }}</div>
 					</div>
 					<div class="card-content">
-						<p class="category">People have registered</p>
+						<p class="category text-danger"><strong>People have registered</strong></p>
 					</div>
 					
 				</div>
@@ -35,7 +35,7 @@
 						<div style="padding: 10px">{{ $cc }}</div>
 					</div>
 					<div class="card-content">
-						<p class="category">People solved this round</p>
+						<p class="category text-danger"><strong>People solved this round</strong></p>
 					</div>
 
 				</div>
@@ -56,11 +56,11 @@
 	        </div>
 	        <div class="card-content table-responsive">
 	            <table class="table table-hover">
-	                <thead class="text-warning">
-	                    <th>Rank</th>
-	                	<th>Name</th>
-	                	<th>Email</th>
-	                	<th>Round</th>
+	                <thead class="text-danger">
+	                    <th style="font-weight: bold;">Rank</th>
+	                	<th style="font-weight: bold;">Name</th>
+	                	<th style="font-weight: bold;">Email</th>
+	                	<th style="font-weight: bold;">Round</th>
 	                </thead>
 	                <tbody>
 	                	@foreach ($stats as $key=>$value)

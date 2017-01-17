@@ -6,7 +6,7 @@
     <div class="col-md-6 col-sm-6  col-sm-offset-3">
         
         <div class="card card-login card-hidden">
-            <div class="card-header text-center" data-background-color="blue">
+            <div class="card-header text-center" data-background-color="red">
                 <h3 class="card-title">Login with</h3>
                 <div class="social-line row">
                     <div class="col-md-2 col-sm-offset-3">
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="footer text-center ">
-                            <input type="submit" class="btn btn-info fsubmit" value="Login to the Chamber"></input>
+                            <input type="submit" class="btn btn-danger fsubmit" value="Login to the Chamber"></input>
                         </div>
                         <br>
                         <div class="text-center">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="footer text-center ">
-                            <button type="submit" class="btn btn-success fsubmit">Register Me</button>
+                            <button type="submit" class="btn btn-danger fsubmit">Register Me</button>
                         </div>
                         <br>
                         <div class="text-center">
@@ -105,7 +105,6 @@
                 </div>
 
             </div>
-            <!-- card content ends here -->
         </div>
     </div>
 @endsection
@@ -118,7 +117,7 @@
             $('#loginbox').fadeOut('medium',function(){
                 $('#registerbox').fadeIn('medium');
                 $('.card-title').html('Register with');
-                $('.card-header').attr('data-background-color','green');
+                $('.card-header').attr('data-background-color','red');
             }); 
            
    };
@@ -127,7 +126,7 @@
             $('#registerbox').fadeOut('medium',function(){
                 $('#loginbox').fadeIn('medium');
                 $('.card-title').html('Login with');
-                $('.card-header').attr('data-background-color','blue');
+                $('.card-header').attr('data-background-color','red');
             }); 
            
     };

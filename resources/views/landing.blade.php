@@ -40,6 +40,9 @@
                         <div class="col-md-7">
                             <div class="description" >
                                 <h4 class="mainfont2" style="color:chocolate;">Cool Prizes to be Won</h4>
+                                <h3 class="text-danger">1st Prize: Rs 2000</h3>
+                                <h3 class="text-danger">2nd Prize: Rs 1000</h3>
+                                <h3 class="text-danger">3rd and 4th Prize : T-shirt and Goodies</h3>
                             </div>
                         </div>
                         <div class="col-md-5 hidden-xs">

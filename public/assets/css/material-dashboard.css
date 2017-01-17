@@ -1474,7 +1474,7 @@ h2.title {
 }
 
 body {
-  background-color: #757575;
+  background-color: #3D3D3D;
   color: #3C4858;
 }
 body.inverse {
@@ -3081,7 +3081,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   line-height: 1.42857;
 }
 .navbar, .navbar.navbar-default {
-  background-color: #757575;
+  background-color: #3D3D3D;
   color: #555555;
 }
 .navbar .navbar-form .form-group input.form-control::-moz-placeholder,
