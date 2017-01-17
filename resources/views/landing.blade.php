@@ -34,7 +34,7 @@
                     <p>Explore the Sherlock in you and analyse the breathtaking world through maps to find your clues.</p>
                 </div>
             </div>
-            <div class="section section-presentation">
+            <div class="section section-presentation" style="margin-top: 0px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
@@ -89,7 +89,7 @@
                         </a>
                     </div>
                     <div class="copyright">
-                        &copy; 2017 <a href="http://nitdgplug.org">GNU Linux Users' Group</a>
+                        &copy; 2017 <a href="http://nitdgplug.org" class="text-info">GNU Linux Users' Group</a>
                     </div>
                 </div>
             </footer>

@@ -26,17 +26,16 @@
 <body style="overflow: hidden;">
 
     <div class="wrapper">
-        <div class="sidebar" data-color="red" data-image="{{ URL::asset('assets/img/sd2.jpg') }}">
+        <div class="sidebar" data-color="red" data-image="{{ URL::asset('assets/img/sidebar.jpg') }}" style="z-index: 100;">
 
             <div class="logo">
                 <h4 class="simple-text">
-                    <strong>Digital Fortress</strong>
+                    <strong style="color: #e84c3d; font-size: 1.7vw; text-shadow: -0.5px 0 gray, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;">Digital Fortress</strong>
                 </h4>
             </div>
 
             <div class="sidebar-wrapper">
                 <ul class="nav">
-
                     @if (session()->has('email'))
                         <li class="{{ (isset($tab)&&$tab==1)?'active':''}}">
                             <a href="dashboard">
@@ -78,7 +77,7 @@
         </div>
 
         <div class="main-panel">
-            <nav class="navbar navbar-transparent navbar-absolute">
+            <nav class="navbar  navbar-absolute">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse">
@@ -87,14 +86,14 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">{{ $dashname or '' }}</a>
+                        <a class="navbar-brand" href="#" style="color: #f5f5f5; font-weight: bold;">{{ $dashname or '' }}</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             @if (session()->has('name'))
                                 <li class="dropdown" id="avoidbackdrop">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="material-icons"  style="font-size: 28px;">person</i>
+                                        <i class=" text-warning material-icons"  style="font-size: 28px;">person</i>
                                         <p class="hidden-lg hidden-md">My Profile</p>
                                    </a>
                                 
@@ -110,14 +109,14 @@
                 </div>
             </nav>
 
-            <div class="content" style="background-image: url('{{ URL::asset('assets/img/hp.png')}}'); background-repeat:no-repeat; background-position: right center; ">
-                <div class="container-fluid">
+            <div class="content" style="background-image: url('{{ URL::asset('assets/img/back.jpg')}}'); background-repeat: repeat-x;">
+                <div class="container-fluid" style="z-index:-100;">
                     <div class="row">
                         @yield('content')
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <footer class="footer" style="padding: 0;color: smokewhite;">
                 <div class="container-fluid">
                     <p class="copyright pull-right">
                         &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">GNU Linux User's Group</a>

@@ -25,11 +25,14 @@ class MainController extends Controller
             return view('quiz/winner');
         $question = question::where('round_id',$currentRound)->select(['question_no','title','question','position'])->get()->toArray();
         usort($question, function($a, $b){ return $a['question_no']>=$b['question_no']; });
+        
+
         $solved = solved::where(['email'=>session('email'),'round_id'=>$currentRound])->get()->toArray();
         $roundDetails = round::where('round_id',$currentRound)->select(['round_name','question'])->first();
         $locations = [];
         $solved = array_column($solved, 'question_no');
 
+       // print_r($question);
         foreach ($question as $key=>$value) {
             if(in_array($value['question_no'], $solved))
             {
@@ -42,6 +45,7 @@ class MainController extends Controller
             }
             unset($question[$key]['position']);
         }
+        //dd($locations);
         $details = array(
                         'tab'       =>  2,
                         'dashname'  => 'Round '.$currentRound,

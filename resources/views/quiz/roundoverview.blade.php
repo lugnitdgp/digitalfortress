@@ -209,9 +209,11 @@ $(document).ready(function(){
         showGoogleMap(map2);
     });
 
+
     $('table>tbody>tr .question').click(function() {        
         var qno = $(this).data('qno');
-        var y = JSON.parse('{{ json_encode($question) }}'.replace(/&quot;/g,'"'));
+        //var y = JSON.parse('{{ json_encode($question) }}'.replace(/&quot;/g,'"'));
+        var y = <?php echo json_encode($question); ?>;
         var qno = $(this).data('qno');
         var key=-1;
         $(y).each(function(index, data){

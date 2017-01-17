@@ -497,7 +497,7 @@ h2.title {
 .off-canvas-sidebar .nav li > a {
   margin: 5px 7.5px;
   border-radius: 3px;
-  color: #3C4858;
+  color: #ffffff;
 }
 .sidebar .nav li:hover > a,
 .off-canvas-sidebar .nav li:hover > a {
@@ -548,8 +548,7 @@ h2.title {
   height: 100%;
   content: "";
   display: block;
-  background: #FFFFFF;
-  opacity: .83;
+
 }
 .sidebar .logo,
 .off-canvas-sidebar .logo {
@@ -681,12 +680,12 @@ h2.title {
   transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
 }
 .main-panel > .content {
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 25px 12px;
   min-height: calc(100% - 123px);
 }
 .main-panel > .footer {
-  border-top: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7; 
 }
 .main-panel > .navbar {
   margin-bottom: 0;
@@ -1475,7 +1474,7 @@ h2.title {
 }
 
 body {
-  background-color: #EEEEEE;
+  background-color: #757575;
   color: #3C4858;
 }
 body.inverse {
@@ -1529,7 +1528,7 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 }
 
 a {
-  color: #9c27b0;
+  color: #F5F5F5;
 }
 a:hover, a:focus {
   color: #89229b;
@@ -3082,7 +3081,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   line-height: 1.42857;
 }
 .navbar, .navbar.navbar-default {
-  background-color: #FFFFFF;
+  background-color: #757575;
   color: #555555;
 }
 .navbar .navbar-form .form-group input.form-control::-moz-placeholder,
@@ -3354,6 +3353,9 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .navbar-fixed-top {
   border-radius: 0;
 }
+
+
+
 @media (max-width: 1199px) {
   .navbar {
     /*
