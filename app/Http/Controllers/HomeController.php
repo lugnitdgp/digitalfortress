@@ -72,8 +72,8 @@ class HomeController extends Controller
 
             $key = array_search($email, array_column($lboard, 'email'));
             
-            $lboard = array_slice($lboard, ($key-3>0)?$key-3:0, ($key+3<=count($lboard))?$key+3:count($lboard), true);
-            
+            $lboard = array_slice($lboard, ($key-4>0)?$key-4:0, 9, true);
+
             $cc = leaderboard::where('round_id','>',$lboard[$key]['round_id'])->count();
 
             return view('dashboard')->with(['name'=>session('name'),'tab'=>1,'stats'=>$lboard,'people'=>$people,'dashname'=>'My Dashboard', 'key'=>$key, 'cc'=>$cc]);
