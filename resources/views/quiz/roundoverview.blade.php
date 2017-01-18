@@ -49,9 +49,9 @@
                             <th width="20%">Status</th>
                     </thead>
                     <tbody>
-                        @foreach ($question as $value)
+                        @foreach ($question as $key=>$value)
                         <tr class="cent">
-                            <td>{{ $value['question_no'] }}</td>
+                            <td value="{{ $value['question_no'] }} ">{{ $key+1 }}</td>
                             <td style="cursor: pointer;" class="question" data-qno="{{ $value['question_no'] }}">{{ $value['title'] }}</td>
                             <td>
                                 @if ($value['solved']==1)
@@ -178,7 +178,7 @@ function showGoogleMap(e)
       e.addMarker({
         lat: locations[i][0],
         lng: locations[i][1],
-        title:i+1
+        title: (parseInt(i)+1).toString
       });
     }
     if(locations.length>0)
@@ -187,6 +187,8 @@ function showGoogleMap(e)
 
 
 $(document).ready(function(){
+
+    var y = <?php echo json_encode($question); ?>;
 
      $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content') }
@@ -211,10 +213,8 @@ $(document).ready(function(){
     });
 
 
+
     $('table>tbody>tr .question').click(function() {        
-        var qno = $(this).data('qno');
-        //var y = JSON.parse('{{ json_encode($question) }}'.replace(/&quot;/g,'"'));
-        var y = <?php echo json_encode($question); ?>;
         var qno = $(this).data('qno');
         var key=-1;
         $(y).each(function(index, data){
