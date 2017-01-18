@@ -16,8 +16,8 @@ class CreateRoundAnswerTable extends Migration
             $table->increments('id');
             $table->integer('round_id');
             $table->string('round_name');
-            $table->string('question');
-            $table->string('answer');
+            $table->text('question');
+            $table->text('answer');
             $table->timestamps();
         });
     }

@@ -49,9 +49,9 @@
                             <th width="20%">Status</th>
                     </thead>
                     <tbody>
-                        @foreach ($question as $key=>$value)
+                        @foreach ($question as $value)
                         <tr class="cent">
-                            <td value="{{ $value['question_no'] }} ">{{ $key+1 }}</td>
+                            <td>{{ $value['question_no'] }}</td>
                             <td style="cursor: pointer;" class="question" data-qno="{{ $value['question_no'] }}">{{ $value['title'] }}</td>
                             <td>
                                 @if ($value['solved']==1)
@@ -234,13 +234,15 @@ $(document).ready(function(){
     $("#quesSubmit").click(function(){
         var qno = $(this).parent().parent().find("#qno").val();
         var ans = $("#hintQuesAns").val();
+        var rno = '{{$round}}';
         if(ans.length>0)
         {
             $.ajax({
                 type:'POST',
                 url:'/verifyans',
                 data:{
-                    'qno':qno,
+                    'qno': qno,
+                    'rno': rno,
                     'ans': ans
                 },
                 success:function(data){

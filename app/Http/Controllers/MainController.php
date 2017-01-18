@@ -50,13 +50,12 @@ class MainController extends Controller
             unset($question[$key]['position']);
         }
         $details = array(
-                        'tab'       =>  2,
-                        'dashname'  => 'Round '.$currentRound,
-                        'locations' =>  $locations,
-                        'roundDetails'     =>  $roundDetails,
-                       // 'solved'    =>  $solved,
-                        'question'  =>  $question,
-                        'round'     =>  $currentRound
+                        'tab'               =>  2,
+                        'dashname'          => 'Round '.$currentRound,
+                        'locations'         =>  $locations,
+                        'roundDetails'      =>  $roundDetails,
+                        'question'          =>  $question,
+                        'round'             =>  $currentRound
                     );
         return view('quiz/roundoverview')->with($details);
     }
@@ -64,7 +63,8 @@ class MainController extends Controller
     public function verifyans(Request $requests)
     {
         $qno = $requests->input('qno');
-        $ques = question::where('question_no',$qno)->select(['answer','round_id'])->first();
+        $rno = $requests->input('rno');
+        $ques = question::where(['question_no'=>$qno,'round_id'=>$rno])->select(['answer','round_id'])->first();
         $userans = $requests->input('ans');
 
         if($ques['answer'] == $userans){
