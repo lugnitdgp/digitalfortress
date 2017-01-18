@@ -33,11 +33,15 @@ class MainController extends Controller
         $solved = array_column($solved, 'question_no');
 
        // print_r($question);
+        $p=0;
         foreach ($question as $key=>$value) {
+
             if(in_array($value['question_no'], $solved))
-            {
-                $locations[]=explode(",",$value['position']);
+            {   
+                $locations[$p]= explode(",",$value['position']);
+                $locations[$p][]=$value['question_no'];
                 $question[$key]['solved'] = 1;
+                $p++;
             }
             else
             {
@@ -45,7 +49,6 @@ class MainController extends Controller
             }
             unset($question[$key]['position']);
         }
-        //dd($locations);
         $details = array(
                         'tab'       =>  2,
                         'dashname'  => 'Round '.$currentRound,

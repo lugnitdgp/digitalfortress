@@ -178,7 +178,7 @@ function showGoogleMap(e)
       e.addMarker({
         lat: locations[i][0],
         lng: locations[i][1],
-        title: 'Question '+(parseInt(i)+1).toString()
+        title: 'Question '+locations[i][2]
       });
     }
     if(locations.length>0)
