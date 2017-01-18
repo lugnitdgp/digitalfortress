@@ -13,7 +13,7 @@
                         
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-hidden="true" aria-labelledby="headingOne">
                             <div class="panel-heading">
-                                <h5 class="panel-title text-center">{{ $roundDetails['question'] }}</h5>
+                                <h5 class="panel-title text-center">{!! $roundDetails['question'] !!}</h5>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-8">
