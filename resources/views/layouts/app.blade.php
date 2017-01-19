@@ -77,7 +77,22 @@
                             <p>Leaderboard</p>
                         </a>
                     </li>
-
+                    <hr style="width:80%; border-color: rgba(180, 180, 180, 0.3);">
+                    <p class="text-center" style="color:white;">Powered By</p>
+                     <li class=" text-center">
+                         
+                            <a href="http://ungineering.com">
+                                <img style="border-radius: 5px;" src="{{ URL::asset('assets/img/un.png') }}">
+                            </a>
+                                               
+                    </li>
+                   <li class=" text-center">
+                         
+                            <a href="#">
+                                <img style="border-radius: 5px;" src="{{ URL::asset('assets/img/cl.png') }}">
+                            </a>
+                                               
+                    </li>
                 </ul>
             </div>
         </div>
@@ -115,18 +130,21 @@
                 </div>
             </nav>
 
-            <div class="content" style="background-image: url('{{ URL::asset('assets/img/back.jpg')}}'); background-repeat: repeat-x;">
+            <div class="content" style="background-image: url('{{ URL::asset('assets/img/back.jpg')}}'); background-repeat: repeat-x; background-size: cover; ">
                 <div class="container-fluid" style="z-index:-100;" >
                     <div class="row" >
                         @yield('content')
                     </div>
                 </div>
             </div>
-            <footer class="footer" style="padding: 0;color: smokewhite;">
+            <footer class="footer" style="padding: 0;">
                 <div class="container-fluid">
-                    <p class="copyright pull-right">
+                    <div class="row" style="margin-top: 8px;">
+                        <p class="copyright pull-right" style="color: white;">
                         &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">GNU Linux User's Group</a>
-                    </p>
+                        </p>
+                    </div>
+                    
                 </div>
             </footer>
         </div>

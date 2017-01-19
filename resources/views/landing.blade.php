@@ -23,7 +23,8 @@
         <div class="wrapper">
             <div class="parallax filter-gradient" data-color="blue">
                 <div class="parallax-background">
-                    <img class="parallax-background-image" src="{{ URL::asset('assets/img/Hogwartscastle.jpg') }}">
+                    <img class="parallax-background-image bigimg" src="{{ URL::asset('assets/img/Hogwartscastle.jpg') }}">
+                    <img class="parallax-background-image smallimg" style="width: 100%;" src="{{ URL::asset('assets/img/dfopen.jpg') }}">
                 </div>
             </div>
             <div class="section section-gray section-clients">
@@ -48,6 +49,17 @@
                         <div class="col-md-5 hidden-xs">
                             <img src="{{ URL::asset('assets/img/treasure.png') }}" />
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-gray section-clients">
+                <div class="container text-center">
+                    <h4 class="mainfont2sm">Our Sponsor</h4>
+                    <div class="col-md-6">
+                        <a href="http://ungineering.com"><img src="{{ URL::asset('assets/img/un.png') }}" /></a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="http://ungineering.com"><img src="{{ URL::asset('assets/img/cl.png') }}" /></a>
                     </div>
                 </div>
             </div>
